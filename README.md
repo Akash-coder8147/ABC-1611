@@ -20,6 +20,7 @@ cat secrets.yml
 mkdir -p ~/ansible-tf-task
 cd ~/ansible-tf-task
 
+inventory.ini 
 
 [azure-vm]
 20.64.146.53 ansible_user=azureuser ansible_ssh_private_key_file=/home/azureuser/Ak-vm-practice_key.pem
