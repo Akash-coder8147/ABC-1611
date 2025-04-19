@@ -1,10 +1,23 @@
 1. create Linux vm in azure portal with public key and ip.
 
-public ip: 20.64.146.53
-public key: Ak-vm-practice_key.pem
+Use Azure Portal UI to:
+Create VM with username azureuser
+Use the public key: Ak-vm-practice_key.pem.pub
+Assign a static public IP: 20.64.146.53
+
+Output:
+VM: 20.64.146.53
+SSH user: azureuser
 
 
 2.store the certificate in ansible vault.
+
+cd ~
+mkdir -p ~/.ssh
+mv Ak-vm-practice_key.pem ~/.ssh/
+chmod 600 ~/.ssh/Ak-vm-practice_key.pem
+ansible-vault create secrets.yml
+
 
 ansible_user: azureuser
 ansible_host: localhost
@@ -78,7 +91,9 @@ ansible-playbook -i inventory.ini playbook.yml --ask-vault-pass
 
  4. Create GitHub Repo named ABC-1611
 
-     url:https://github.com/Akash-coder8147/ABC-1611
+    Repo name: ABC-1611
+    URL: https://github.com/Akash-coder8147/ABC-1611
+    
     
 
 6. Push Ansible Configuration to GitHub
